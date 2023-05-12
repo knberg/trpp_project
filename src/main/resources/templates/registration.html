@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бородино - барбершоп</title>
+    <link rel="icon" href="media/svg-editor-image.svg" type="image/png">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+
+    <header th:insert="blocks/header"></header>
+
+    <div class="login-page">
+        <form th:action="@{/registration}" th:object="${user}" method="post" class="simple-form login-form">
+            <div th:if="${param.success}">
+                <div class="alert alert-info">
+                    Регистрация прошла успешно!
+                </div>
+            </div>
+            <h2 style="text-align: center;">Регистрация</h2>
+
+            <label for="login">Логин</label>
+            <input id="login" th:field="*{login}" required/>
+            <p class="error-message"
+                th:each="error: ${#fields.errors('login')}"
+                th:text="${error}">Ошибка</p>
+
+            <label for="password">Пароль</label>
+            <input id="password" type="password" th:field="*{password}" required/>
+            <p class="error-message"
+                th:each="error : ${#fields.errors('password')}"
+                th:text="${error}">Ошибка</p>
+
+            <label for="name">Имя</label>
+            <input id="name" type="text" th:field="*{name}" required/>
+
+            <label for="phone">Телефон</label>
+            <input id="phone" type="tel" th:field="*{phone}" required/>
+
+            <label for="phone">Email</label>
+            <input id="email" type="email" th:field="*{email}" required/>
+
+            <input type="submit" value="Зарегистрироваться"/>
+
+            <div class="register-ref">
+                Уже зарегистрированы? <a href="/" th:href="@{/login}">Войдите</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

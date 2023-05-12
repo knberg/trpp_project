@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бородино - барбершоп</title>
+    <link rel="icon" href="media/svg-editor-image.svg" type="image/png">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+
+    <header th:insert="blocks/header"></header>
+
+    <div class="login-page">
+        <form th:action="@{/login}" method="post" class="simple-form login-form">
+            <div th:if="${param.error}">
+                <div class="alert alert-danger">
+                    Неверный логин или пароль.
+                </div>
+            </div>
+            <div th:if="${param.logout}">
+                <div class="alert alert-info">
+                    Вы вышли из системы
+                </div>
+            </div>
+            <h2 style="text-align: center;">Вход</h2>
+
+            <label for="username">Логин</label>
+            <input type="text"
+                    id="username"
+                    name="username"
+                    class="form-control"
+                    autofocus="autofocus"/>
+
+
+            <label for="password" >Пароль</label>
+            <input type="password"
+                    id="password"
+                    name="password"
+                    class="form-control"/>
+
+            <input type="submit"
+                    name="login-submit"
+                    id="login-submit"
+                    class="form-control btn btn-info logbutton"
+                    value="Вход"/>
+
+            <div class="register-ref">
+                Впервые у нас? <a href="/" th:href="@{/registration}">Зарегистрируйтесь</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

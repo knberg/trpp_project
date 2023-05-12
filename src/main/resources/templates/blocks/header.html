@@ -1,0 +1,17 @@
+<nav class="navbar">
+    <a href="/" class="logo">
+        <img th:src="@{/img/barblogo.png}" class="logo_img"  alt=""/>
+        <span>Borodino</span>
+    </a>
+    <ul class="menu-list">
+        <div class="icon cancel-btn"><i class="fas fa-times"></i></div>
+        <li class="menu-item"><a href="/">О нас</a></li>
+        <li class="menu-item"><a href="/price">Услуги</a></li>
+        <li class="menu-item"><a href="/gallery">Наши работы</a></li>
+        <li class="menu-item"><a href="/contacts">Контакты</a></li>
+    </ul>
+    <a sec:authorize="!isAuthenticated()" class="sign-btn btn" href="/login">Войти</a>
+    <a sec:authorize="isAuthenticated()" class="sign-btn btn" href="/account">Кабинет</a>
+    <div class="icon menu-btn"><i class="fas fa-bars"></i></div>
+</nav>
+

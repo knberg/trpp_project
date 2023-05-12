@@ -1,0 +1,10 @@
+spring:
+    datasource:
+        url: jdbc:postgresql://localhost:5432/barb
+        username: ilya
+        password: knberg
+    jpa:
+        hibernate:
+            ddl-auto: update
+    main:
+        allow-circular-references: true

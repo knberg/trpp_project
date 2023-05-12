@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бородино - барбершоп</title>
+    <link rel="icon" href="media/svg-editor-image.svg" type="image/png">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+
+    <header th:insert="blocks/header"></header>
+
+    <div class="banner">
+        <img class="main-back" src="/img/background2.jpg">
+        <div class="banner-text">
+            <span>barbershop</span>
+            <h1>Прайс-лист</h1>
+        </div>
+    </div>
+    <section class="black">
+        <div class="row">
+            <div class="price-card">
+                <h2>Стрижки</h2>
+                <div class="price-item">
+                    <div class="line">
+                        <h3>Стрижка ножницами</h3>
+                        <span class="price">1000 руб</span>
+                    </div>
+                    <p>
+                        Стрижка любой сложности с использованием ножниц
+                    </p>
+                </div>
+                <div class="price-item">
+                    <div class="line">
+                        <h3>Стрижка машинкой</h3>
+                        <span class="price">700 руб</span>
+                    </div>
+                    <p>
+                        Стрижка любой сложности с использованием машинки
+                    </p>
+                </div>
+                <div class="price-item">
+                    <div class="line">
+                        <h3>Стрижка шейвером</h3>
+                        <span class="price">800 руб</span>
+                    </div>
+                    <p>
+                        Стрижка любой сложности с использованием шейвера
+                    </p>
+                </div>
+                <div class="price-item">
+                    <div class="line">
+                        <h3>Укладка</h3>
+                        <span class="price">350 руб</span>
+                    </div>
+                    <p>
+                        Профессиональная укладка волос гелем или пудрой
+                    </p>
+                </div>
+                <div class="price-item">
+                    <div class="line">
+                        <h3>Детская (до 10 лет)</h3>
+                        <span class="price">750 руб</span>
+                    </div>
+                    <p>
+                        Любая стрижка для самых маленьких клиентов
+                    </p>
+                </div>
+            </div>
+            <div class="price-card">
+                <h2>Борода</h2>
+                <div class="price-item">
+                    <div class="line">
+                        <h3>Моделирование</h3>
+                        <span class="price">900 руб</span>
+                    </div>
+                    <p>
+                        Создадим стильный и современный образ 
+                    </p>
+                </div>
+                <div class="price-item">
+                    <div class="line">
+                        <h3>Стрижка</h3>
+                        <span class="price">550 руб</span>
+                    </div>
+                    <p>
+                        Подравняем бороду при помощи ножниц и машинки
+                    </p>
+                </div>
+                <div class="price-item">
+                    <div class="line">
+                        <h3>Бритьё</h3>
+                        <span class="price">400 руб</span>
+                    </div>
+                    <p>
+                        Удалим волосы с использованием опасной бритвы
+                    </p>
+                </div>
+                <div class="price-item">
+                    <div class="line">
+                        <h3>Тонирование</h3>
+                        <span class="price">500 руб</span>
+                    </div>
+                    <p>
+                        Выши волосы снова в цвете
+                    </p>
+                </div>
+                <div class="price-item">
+                    <div class="line">
+                        <h3>Окантовка</h3>
+                        <span class="price">350 руб</span>
+                    </div>
+                    <p>
+                        Выравнивание контура бороды и усов
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="text-container">
+                <h2>Для вас скидка!</h2>
+                <p>Введите Email, чтобы получать сообщения об акциях и промокоды на скидку</p> 
+                <div class="subscribe">
+                    <input type="email" placeholder="Ваш E-mail">
+                    <button><i class="fab fa-telegram-plane"></i></button>
+                </div>
+            </div>
+            <img class="ilustr" src="https://top-barbershop.com/media/2019/02/IMG_1678.jpg">
+        </div>
+    </section>
+
+    <div th:insert="blocks/footer"></div>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бородино - барбершоп</title>
+    <link rel="icon" href="media/svg-editor-image.svg" type="image/png">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+
+    <header th:insert="blocks/header"></header>
+
+    <div class="banner">
+        <img class="main-back" src="/img/background4.jpg">
+        <div class="banner-text">
+            <span>barbershop</span>
+            <h1>Бородино</h1>
+            <h2>Твой стиль в наших руках</h2>
+        </div>
+    </div>
+    <section>
+        <div class="container">
+            <div class="text-container">
+                <h2>Бородино - это</h2>
+                <p>
+                    именно то место, где знают все секреты мужских стрижек, правила бритья и ухода за бородой и усами. Мы прислушаемся к вашим желаниям и подберем индивидуальный образ.Наши мастера внимательно слушают пожелания клиента, при этом учитывают особенности строения головы и тип волос каждого. Вы можете быть уверены, что мастер сделает стрижку, укладку или оформление бороды именно так, как вы себе представляли. 
+                </p>
+            </div>
+            <img class="ilustr" src="/img/expirience.png">
+        </div>
+    </section>
+    <section id="about" class="middle-section">
+        <div class="container column">
+            <img class="back" src="https://templatekit.jegtheme.com/rubick/wp-content/uploads/sites/29/2021/01/vintage-barber-shop-tools-on-wooden-background-e1610521541277.jpg">
+            <h2 class="title">Наши услуги</h2>
+            <p class="info">
+                Наш салон предоставляет любые услуги высшего качества от укладки до моделирования бороды.
+            </p>
+        </div>
+        <div class="row">
+            <div class="card">
+                <div class="img-box">
+                    <img src="https://headshotbarbershop.com/wp-content/uploads/2017/05/headshot-7.jpg">
+                </div>
+                <div class="text">
+                    <h2>Стрижка</h2>
+                    <p>
+                        Свой идеальный стиль вы можете выбрать самостоятельно, но барбер всегда готов прийти на помощь и помочь дельным советом.
+                    </p>
+                    <a class="read-more" href="#">Подробнее</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img-box">
+                    <img src="https://templatekit.jegtheme.com/rubick/wp-content/uploads/sites/29/2021/01/customer-getting-ready-in-barbershop-e1610088621114.jpg">
+                </div>
+                <div class="text">
+                    <h2>Бритьё</h2>
+                    <p>
+                        Форма и контуры бороды и усов подбираются индивидуально, а получение максимально четких линий возможно за счет использования опасной бритвы.
+                    </p>
+                    <a class="read-more" href="#">Подробнее</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img-box">
+                    <img src="https://avatars.mds.yandex.net/get-altay/2134557/2a0000016d43f5dc2f5bc1f18b628ae03ce2/XXL">
+                </div>
+                <div class="text">
+                    <h2>Тонировка</h2>
+                    <p>
+                        Камуфляж седины. Нанесение специального красителя для естественной коррекции седых участков.
+                    </p>
+                    <a class="read-more" href="#">Подробнее</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div th:insert="blocks/footer"></div>
+
+</body>
+</html>

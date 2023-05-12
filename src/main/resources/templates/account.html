@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бородино - барбершоп</title>
+    <link rel="icon" href="media/svg-editor-image.svg" type="image/png">
+    <link rel="stylesheet" type="text/css" href="/css/account.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+    <div class="left-side">
+        <div class="account-header">
+            <a href="/" class="logo">
+                <img src="/img/barblogo.png" class="logo_img">
+                <span>Borodino</span>
+            </a>
+        </div>
+        <div class="account-info">
+            <h2>Личная информация</h2>
+            <div class="main-info">
+                <form method="post" th:action="@{/account/user}">
+                    <div class="info-item">
+                        <label>Имя:</label>
+                        <input class="edit-field" name="name" th:value="*{user.name}" readonly>
+                    </div>
+                    <div class="info-item">
+                        <label>Телефон:</label>
+                        <input class="edit-field" name="phone"  th:value="*{user.phone}" readonly>
+                    </div>
+                    <div class="info-item">
+                        <label>Почта:</label>
+                        <input class="edit-field" name="email" th:value="*{user.email}" readonly>
+                    </div>
+                    <a id="edit-btn" class="btn" href="#">Изменить</a>
+                    <input type="submit" id="save-btn" class="btn" value="Сохранить">
+                </form>
+            </div>
+            <a class="logout" href="/logout">
+                <img src="/img/logout.png">
+                <span>Выход</span>
+            </a>
+        </div>
+    </div>
+    <div class="right-side">
+        <div class="appointments-info">
+            <div class="appointments-header">
+                <h2>Мои записи</h2>
+                <a class="btn open-popup" href="#">Записаться</a>
+            </div>
+            <table class="appointments-table">
+                <thead>
+                <tr>
+                    <th>Барбер</th>
+                    <th>Дата</th>
+                    <th>Время</th>
+                    <th>Действие</th>
+                </tr>
+                </thead>
+                    <tbody>
+                        <tr th:if="${#lists.isEmpty(appointments)}">
+                            <td colspan="4">Запишитесь в наш салон впервые</td>
+                        </tr>
+                        <tr class="appointment" th:each="appointment : ${appointments}">
+                            <td th:text="*{appointment.master}" >Иванова А.А.</td>
+                            <td th:text="*{appointment.date}" >2023-05-10</td>
+                            <td th:text="*{appointment.time}" >14:00</td>
+                            <td>
+                                <a class="table-btn" th:href="@{'/account/delete/'+${appointment.id}}">Удалить</a>
+                            </td>
+                        </tr>
+                    </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="popup-bg">
+        <div class="popup">
+            <span class="close-popup ">
+                <svg class="" viewBox="0 0 24 24"><path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"/><path d="M0 0h24v24h-24z" fill="none"/></svg>
+            </span>
+            <form class="simple-form" id="booking-form" th:action="@{/account}" method="post">
+
+                <label for="master">Барбер:</label>
+                <select id="master" name="master" required onchange="updateTimeSlots()">
+                    <option value="">Не выбрано</option>
+                    <option value="Антон">Антон</option>
+                    <option value="Дима">Дима</option>
+                    <option value="Алтын">Алтын</option>
+                    <option value="Илья">Илья</option>
+                    <option value="Женя">Женя</option>
+                </select>
+
+                <label for="date">Дата:</label>
+                <input type="date" id="date" name="date" required onchange="updateTimeSlots()">
+
+                <label>Время:</label>
+                <div id="timeslots">
+                    <!-- Временные слоты будут добавлены здесь -->
+                </div>
+
+                <input type="submit" value="Записаться">
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="/js/main.js"></script>
+</body>
+</html>

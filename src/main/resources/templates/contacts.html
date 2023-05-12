@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бородино - барбершоп</title>
+    <link rel="icon" href="media/svg-editor-image.svg" type="image/png">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+<body>
+
+    <header th:insert="blocks/header"></header>
+
+    <div class="banner">
+        <img class="main-back" src="/img/background7.jpg">
+        <div class="banner-text">
+            <span>barbershop</span>
+            <h1>Контакты</h1>
+        </div>
+    </div>
+    <section>
+        <div class="container">
+            <div class="text-container">
+                <h2><i class="fa fa-map-marker-alt"></i>Мы находимся:</h2>
+                <p>г. Москва, ул. Коломенская, д.12</p> 
+                <p>г. Москва, ул. Пушкина, д.2а</p> 
+                <p>г. Москва, ул. Покрышкина, д.17, эт.2</p> 
+                <p>г. Химки, ул. Семёновская, д.7</p> 
+            </div>
+            <div class="text-container">
+                <h2><i class="fa fa-clock"></i>Время работы:</h2>
+                <p>Пн-Пт: 9:00-20:00</p> 
+                <p>Сб-Вс: 9:00-18:00</p> 
+                <div class="phone-number">+ 7(900) 555-00-11</div> 
+            </div>
+        </div>
+    </section>
+    <div id="map" style="height: 500px;"></div>
+
+    <div th:insert="blocks/footer"></div>
+
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+   <script type="text/javascript" src="/js/map.js"></script>
+</body>
+</html>
